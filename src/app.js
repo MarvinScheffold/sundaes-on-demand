@@ -1,6 +1,4 @@
-import logo from "./logo.svg";
-import "./App.css";
-import { useState } from "react";
+import "./app.css";
 
 function App() {
     return (

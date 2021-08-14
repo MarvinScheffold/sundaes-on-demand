@@ -4,9 +4,9 @@ import SummaryForm from "../summary-form";
 test("checkbox is unchecked, button is disabled", () => {
     render(<SummaryForm />);
     const checkbox = screen.getByRole("checkbox", {
-        name: /I agree to Terms and Conditions/i,
+        name: /terms and conditions/i,
     });
-    const button = screen.getByRole("button", { name: /Confirm order/i });
+    const button = screen.getByRole("button", { name: /confirm order/i });
     expect(checkbox).not.toBeChecked();
     expect(button).toBeDisabled();
 });
@@ -14,9 +14,9 @@ test("checkbox is unchecked, button is disabled", () => {
 test("checking the checkbox enables button, unchecking it disables button", () => {
     render(<SummaryForm />);
     const checkbox = screen.getByRole("checkbox", {
-        name: /I agree to Terms and Conditions/i,
+        name: /terms and conditions/i,
     });
-    const button = screen.getByRole("button", { name: /Confirm order/i });
+    const button = screen.getByRole("button", { name: /confirm order/i });
     fireEvent.click(checkbox);
     expect(button).toBeEnabled();
 
