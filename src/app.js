@@ -1,9 +1,10 @@
 import "./app.css";
+import SummaryForm from "./routes/summary/summary-form";
 
 function App() {
     return (
         <div className="App">
-            <h1>Order your Sundae</h1>
+            <SummaryForm />
         </div>
     );
 }

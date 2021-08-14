@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import SummaryForm from "../summary-form";
 
 test("checkbox is unchecked, button is disabled", () => {
@@ -17,9 +18,9 @@ test("checking the checkbox enables button, unchecking it disables button", () =
         name: /terms and conditions/i,
     });
     const button = screen.getByRole("button", { name: /confirm order/i });
-    fireEvent.click(checkbox);
+    userEvent.click(checkbox);
     expect(button).toBeEnabled();
 
-    fireEvent.click(checkbox);
+    userEvent.click(checkbox);
     expect(button).toBeDisabled();
 });
