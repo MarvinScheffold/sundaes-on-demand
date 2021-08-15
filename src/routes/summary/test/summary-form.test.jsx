@@ -41,7 +41,8 @@ test("popover appears on hover over terms and conditions and dissappears on unho
     // hover over terms and conditions and check if popover appears
     const termsAndConditions = screen.getByText(/terms and conditions/i);
     userEvent.hover(termsAndConditions);
-    const popoverVisible = screen.getByText(
+
+    const popoverVisible = await screen.findByText(
         /no icecream will actually be delivered/i
     );
     expect(popoverVisible).toBeInTheDocument();

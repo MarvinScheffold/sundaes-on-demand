@@ -17,7 +17,11 @@ export default function SummaryForm() {
             <Form.Group>
                 <FormCheckLabel htmlFor={"checkbox"}>
                     I agree to{" "}
-                    <OverlayTrigger overlay={popover} placement={"right"}>
+                    <OverlayTrigger
+                        overlay={popover}
+                        placement={"right"}
+                        delay={100}
+                    >
                         <a style={{ textDecoration: "underline" }}>
                             terms and conditions
                         </a>
