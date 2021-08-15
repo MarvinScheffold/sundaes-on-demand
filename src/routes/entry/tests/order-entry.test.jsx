@@ -16,9 +16,7 @@ test("error statesments pop up when server responds with an error", async () => 
 
     render(<OrderEntry />);
 
-    const alerts = await screen.findAllByRole("alert", {
-        name: /An unexpected error occurred. Please try again later./i,
-    });
+    const alerts = await screen.findAllByRole("alert");
 
     expect(alerts).toHaveLength(2);
 });
