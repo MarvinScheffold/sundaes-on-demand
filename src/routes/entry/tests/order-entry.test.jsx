@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from "../../../testing-utils/testing-library-utils";
 import { server } from "../../../mocks/server";
 import { rest } from "msw";
 import OrderEntry from "../order-entry";
@@ -15,7 +15,7 @@ test("error statesments pop up when server responds with an error", async () => 
         }),
     ]);
 
-    render(<OrderEntry />, { wrapper: OrderDetailsProvider });
+    render(<OrderEntry />);
 
     const alerts = await screen.findAllByRole("alert");
 
