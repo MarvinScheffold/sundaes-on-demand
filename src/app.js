@@ -1,12 +1,19 @@
-import "./app.css";
-import SummaryForm from "./routes/summary/summary-form";
+import { useState } from "react";
+import Container from "react-bootstrap/Container";
 
-function App() {
+import OrderEntry from "./routes/entry/order-entry";
+
+import { OrderDetailsProvider } from "./contexts/order-details";
+
+export default function App() {
+    // orderPhase needs to be 'inProgress', 'review' or 'completed'
+    const [orderPhase, setOrderPhase] = useState("inProgress");
+
     return (
-        <div className="App">
-            <SummaryForm />
-        </div>
+        <OrderDetailsProvider>
+            <Container>
+                <OrderEntry setOrderPhase={setOrderPhase} />
+            </Container>
+        </OrderDetailsProvider>
     );
 }
-
-export default App;

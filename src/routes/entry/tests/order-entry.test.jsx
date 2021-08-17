@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { server } from "../../../mocks/server";
 import { rest } from "msw";
 import OrderEntry from "../order-entry";
+import { OrderDetailsProvider } from "../../../contexts/order-details";
 
 test("error statesments pop up when server responds with an error", async () => {
     // overwrite mock request handlers to cause error for this test
@@ -14,7 +15,7 @@ test("error statesments pop up when server responds with an error", async () => 
         }),
     ]);
 
-    render(<OrderEntry />);
+    render(<OrderEntry />, { wrapper: OrderDetailsProvider });
 
     const alerts = await screen.findAllByRole("alert");
 
