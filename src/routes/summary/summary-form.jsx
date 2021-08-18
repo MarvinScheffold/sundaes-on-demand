@@ -10,7 +10,7 @@ const popover = (
     </Popover>
 );
 
-export default function SummaryForm() {
+export default function SummaryForm({ setOrderPhase }) {
     const [checked, setChecked] = useState(false);
     return (
         <Form>
@@ -34,7 +34,11 @@ export default function SummaryForm() {
                     checked={checked}
                 />
             </Form.Group>
-            <Button type={"submit"} disabled={!checked}>
+            <Button
+                onClick={() => setOrderPhase()}
+                type={"submit"}
+                disabled={!checked}
+            >
                 Confirm order
             </Button>
         </Form>

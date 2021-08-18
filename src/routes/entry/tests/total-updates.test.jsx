@@ -62,7 +62,7 @@ test("update toppings subtotal when topics selection changes", async () => {
 });
 
 describe("tests the total price", () => {
-    test("grand total is 0.00 initially", async () => {
+    test("grand total is 0.00 initially", () => {
         render(<OrderEntry />);
 
         const grandTotal = screen.getByText(/grand total:/i);
