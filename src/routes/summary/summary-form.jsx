@@ -35,7 +35,7 @@ export default function SummaryForm({ setOrderPhase }) {
                 />
             </Form.Group>
             <Button
-                onClick={() => setOrderPhase()}
+                onClick={() => setOrderPhase("completed")}
                 type={"submit"}
                 disabled={!checked}
             >

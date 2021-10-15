@@ -20,7 +20,7 @@ export default function App() {
                 {orderPhase === "summary" ? (
                     <OrderSummary setOrderPhase={setOrderPhase} />
                 ) : null}
-                {orderPhase === "confirmation" ? (
+                {orderPhase === "completed" ? (
                     <OrderConfirmation setOrderPhase={setOrderPhase} />
                 ) : null}
             </Container>

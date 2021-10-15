@@ -16,7 +16,7 @@ export default function OrderEntry({ setOrderPhase }) {
             <h2>Grand total: {orderDetails.totals.grandTotal}</h2>
             <Button
                 disabled={orderDisabled}
-                onClick={() => setOrderPhase("review")}
+                onClick={() => setOrderPhase("summary")}
             >
                 Order Sundae!
             </Button>
