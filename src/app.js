@@ -10,6 +10,7 @@ import OrderConfirmation from "./routes/confirmation/order-confirmation";
 export default function App() {
     // orderPhase needs to be 'inProgress', 'review' or 'completed'
     const [orderPhase, setOrderPhase] = useState("inProgress");
+    console.log("git test");
 
     return (
         <OrderDetailsProvider>
